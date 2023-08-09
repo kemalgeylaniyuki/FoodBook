@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/foodListFragment"
-        android:name="com.kemalgeylani.foodbook.FoodListFragment"
+        android:name="com.kemalgeylani.foodbook.view.FoodListFragment"
         android:label="FoodListFragment" >
         <action
             android:id="@+id/action_foodListFragment_to_foodDetailFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/foodDetailFragment"
-        android:name="com.kemalgeylani.foodbook.FoodDetailFragment"
+        android:name="com.kemalgeylani.foodbook.view.FoodDetailFragment"
         android:label="FoodDetailFragment" >
         <action
             android:id="@+id/action_foodDetailFragment_to_foodListFragment"
