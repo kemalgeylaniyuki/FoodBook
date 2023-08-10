@@ -48,6 +48,14 @@ class FoodListFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = foodAdapter
 
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            binding.progressBar.visibility = View.VISIBLE
+            binding.textView.visibility = View.GONE
+            binding.recyclerView.visibility = View.GONE
+            viewModel.refreshData()
+            binding.swipeRefreshLayout.isRefreshing = false
+        }
+
         observeLivedata()
 
     }
