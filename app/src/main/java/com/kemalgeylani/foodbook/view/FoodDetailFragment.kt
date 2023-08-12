@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.kemalgeylani.foodbook.databinding.FragmentFoodDetailBinding
+import com.kemalgeylani.foodbook.util.downloadImage
+import com.kemalgeylani.foodbook.util.makePlaceHolder
 import com.kemalgeylani.foodbook.viewmodel.FoodDetailViewModel
 
 class FoodDetailFragment : Fragment() {
@@ -37,13 +39,13 @@ class FoodDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(FoodDetailViewModel::class.java)
-        viewModel.getData()
-
         arguments?.let {
             foodId = FoodDetailFragmentArgs.fromBundle(it).foodId
-            println(foodId)
         }
+
+        viewModel = ViewModelProvider(this).get(FoodDetailViewModel::class.java)
+        viewModel.getData(foodId)
+
 
         observeliveData()
 
@@ -59,6 +61,9 @@ class FoodDetailFragment : Fragment() {
                 binding.carbohydrateText.text = it.foodCarbohydrate
                 binding.proteinText.text = it.foodProtein
                 binding.oilText.text = it.foodOil
+                context?.let {
+                    binding.foodImage.downloadImage(food.foodImage, makePlaceHolder(it))
+                }
 
             }
         })

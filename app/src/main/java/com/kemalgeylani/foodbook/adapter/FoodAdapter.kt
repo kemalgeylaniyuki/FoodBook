@@ -28,7 +28,7 @@ class FoodAdapter(val foodList : ArrayList<Food>) : RecyclerView.Adapter<FoodAda
         holder.binding.calorie.text = foodList.get(position).foodCalorie
 
         holder.itemView.setOnClickListener {
-            val action = FoodListFragmentDirections.actionFoodListFragmentToFoodDetailFragment(0)
+            val action = FoodListFragmentDirections.actionFoodListFragmentToFoodDetailFragment(foodList.get(position).uuid)
             Navigation.findNavController(it).navigate(action)
         }
 

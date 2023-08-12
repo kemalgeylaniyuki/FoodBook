@@ -52,6 +52,7 @@ dependencies {
     def roomVersion = '2.5.2'
     def navVersion = '2.6.0'
     def lifecycle_version = "2.6.1"
+    def preference_version = "1.2.1"
 
 
     implementation 'androidx.core:core-ktx:1.10.1'
@@ -93,4 +94,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
 
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+
+    implementation "androidx.preference:preference-ktx:$preference_version"
 }

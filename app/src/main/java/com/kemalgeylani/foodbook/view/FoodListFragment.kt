@@ -43,7 +43,7 @@ class FoodListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(FoodListViewModel::class.java)
-        viewModel.refreshData()
+        viewModel.refreshFromIntrenet()
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = foodAdapter
