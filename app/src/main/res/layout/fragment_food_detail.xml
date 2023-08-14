@@ -4,6 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
+    
+    <data>
+        
+        <variable
+            name="selectedFood"
+            type="com.kemalgeylani.foodbook.model.Food" />
+        
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,13 +30,14 @@
             android:layout_marginBottom="10dp"
             android:minHeight="200dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            android:getImage="@{selectedFood.foodImage}"
+            />
 
         <TextView
             android:id="@+id/foodNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food Name"
+            android:text="@{selectedFood.foodName}"
             android:textStyle="bold"
             android:textSize="24sp"
             android:layout_below="@id/foodImage"
@@ -40,7 +49,7 @@
             android:id="@+id/foodCalorieText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food Calorie"
+            android:text="@{selectedFood.foodCalorie}"
             android:textSize="22sp"
             android:layout_below="@id/foodNameText"
             android:layout_centerHorizontal="true"
@@ -51,7 +60,7 @@
             android:id="@+id/carbohydrateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Carbohydrate"
+            android:text="@{selectedFood.foodCarbohydrate}"
             android:textSize="22sp"
             android:layout_below="@id/foodCalorieText"
             android:layout_centerHorizontal="true"
@@ -62,7 +71,7 @@
             android:id="@+id/proteinText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Protein"
+            android:text="@{selectedFood.foodProtein}"
             android:textSize="22sp"
             android:layout_below="@id/carbohydrateText"
             android:layout_centerHorizontal="true"
@@ -73,7 +82,7 @@
             android:id="@+id/oilText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oil"
+            android:text="@{selectedFood.foodOil}"
             android:textSize="22sp"
             android:layout_below="@id/proteinText"
             android:layout_centerHorizontal="true"

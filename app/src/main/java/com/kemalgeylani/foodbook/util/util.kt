@@ -2,6 +2,7 @@ package com.kemalgeylani.foodbook.util
 
 import android.content.Context
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -21,4 +22,9 @@ fun makePlaceHolder(context : Context) : CircularProgressDrawable{
         centerRadius = 40f
         start()
     }
+}
+
+@BindingAdapter("android:getImage")
+fun getImage(view: ImageView, url: String?){
+    view.downloadImage(url, makePlaceHolder(view.context))
 }

@@ -56,6 +56,9 @@ class FoodDetailFragment : Fragment() {
         viewModel.foodLiveData.observe(viewLifecycleOwner, Observer { food ->
             food?.let {
 
+                binding.selectedFood = it
+
+                /*
                 binding.foodNameText.text = it.foodName
                 binding.foodCalorieText.text = it.foodCalorie
                 binding.carbohydrateText.text = it.foodCarbohydrate
@@ -64,6 +67,8 @@ class FoodDetailFragment : Fragment() {
                 context?.let {
                     binding.foodImage.downloadImage(food.foodImage, makePlaceHolder(it))
                 }
+
+                 */
 
             }
         })
